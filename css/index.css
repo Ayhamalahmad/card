@@ -1,0 +1,461 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+:root {
+    --Red-input-errors: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    --active-input-border-and-backround: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+}
+
+/* To remove the spinner from a number input field */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
+    outline-color:  var(--active-input-border-and-backround);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .container {
+        display: block;
+    }
+
+}
+
+/* Start Card Section */
+
+.card-section {
+    position: relative;
+    background-image: url(../imges/bg-main-desktop.png);
+    background-size: cover;
+    width: 30%;
+}
+
+@media (max-width: 991px) {
+    .card-section {
+        background-image: url("../imges/bg-main-mobile.png");
+        width: 100%;
+        height: 30%;
+    }
+}
+
+.card-section .card-front .bulets span:nth-of-type(1),
+.card-section .card-front .bulets span:nth-of-type(2) {
+
+    z-index: 20;
+    position: absolute;
+    top: 10px;
+    border-radius: 50%;
+
+}
+
+.card-section .card-front .bulets span:nth-of-type(1) {
+    left: 5%;
+    background-color: var(--White);
+    width: 25px;
+    height: 25px;
+
+}
+
+.card-section .card-front .bulets span:nth-of-type(2) {
+    left: 15%;
+    border: 1px solid var(--White);
+    width: 20px;
+    height: 20px;
+    top: 14px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-size: cover;
+    gap: 2rem;
+    z-index: 1;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 991px) {
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-size: cover;
+        gap: 2rem;
+        z-index: 1;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.card-section .card-back,
+.card-section .card-front {
+    width: 317px;
+    height: 172px;
+    background-size: cover;
+}
+
+@media (min-width: 1190px) {
+
+    .card-section .card-back,
+    .card-section .card-front {
+        width: 447px;
+        height: 245px;
+        border-radius: 6px;
+    }
+}
+
+.card-section .card-back {
+    position: relative;
+}
+
+.card-section .card-back {
+    background-image: url(../imges/bg-card-back.png);
+}
+
+@media (max-width: 991px) {
+    .card-section .card-back {
+        order: -1;
+    }
+}
+
+.card-section .card-front {
+    background-image: url(../imges/bg-card-front.png);
+    color: var(--White);
+    transform: translate(-100px);
+}
+
+@media (max-width: 991px) {
+    .card-section .card-front {
+        transform: translate(-100px, -72px);
+        z-index: 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .card-section .card-front {
+        transform: translate(-30px, -72px);
+    }
+}
+
+.card-section .card-front .card-number {
+    top: 50%;
+    text-align: center;
+    position: relative;
+}
+
+
+.card-section .card-back span {
+    z-index: 8;
+    color: var(--White);
+    font-size: 15px;
+    display: flex;
+    position: relative;
+    justify-content: end;
+    top: 45%;
+    right: 12%;
+
+}
+
+.card-section .card-front .name-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 66%;
+    position: relative;
+    margin: 0 10px;
+}
+
+
+/* End Card Section */
+
+/* Start Form Section */
+
+.form-section {
+    margin: auto;
+}
+
+@media (min-width: 991px) {
+    .form-section {
+        margin: auto;
+
+    }
+}
+
+@media (max-width: 991px) {
+
+    .form-section form {
+        margin: 160px auto;
+        width: fit-content;
+    }
+
+}
+
+.form-section form label {
+    margin: 25px 0 10px 0;
+    display: block;
+    text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+    .form-section form label {
+        margin: 5px 0 10px 0;
+    }
+}
+
+.form-section form input::placeholder {
+    color: var(--Dark-grayish-violet);
+}
+
+.form-section form input:not([type="submit"]) {
+    padding: 15px;
+    border: 1px solid var(--Light-grayish-violet);
+    border-radius: 6px;
+    display: block;
+    width: 350px;
+}
+
+@media (max-width: 767px) {
+    .form-section form input:not([type="submit"]) {
+        padding: 10px;
+        width: 300px;
+    }
+}
+
+.input-number1.fail {
+    outline: 1px solid var(--Red-input-errors);
+    border: 1px solid var(--Red-input-errors);
+    color: var(--Red-input-errors);
+}
+
+.input-number1.fail:focus {
+    outline: 1px solid var(--Red-input-errors);
+
+}
+
+.form-section form .data-inputs .data-labels {
+    margin-bottom: 15px;
+    font-size: 15px;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+    .form-section form .data-inputs .data-labels {
+        margin-top: 15px;
+    }
+}
+
+.form-section form .data-inputs .data-labels .cvc {
+    margin-left: 15px;
+}
+
+.input-data-mm.fail,
+.input-data-yy.fail,
+.input-cvc.fail,
+.input-name.fail {
+    outline: 1px solid var(--Red-input-errors);
+    border: 1px solid var(--Red-input-errors);
+    color: var(--Red-input-errors);
+}
+
+.input-data-mm.fail,
+.input-data-yy.fail,
+.input-cvc.fail:focus {
+    outline: 1px solid var(--Red-input-errors);
+
+}
+
+.form-section form .data-inputs input {
+    width: 100px;
+    display: inline-block;
+}
+
+.form-section form .data-inputs #input-data-mm,
+.form-section form .data-inputs #input-data-yy {
+    width: 70px;
+
+}
+
+@media (max-width: 767px) {
+
+    .form-section form .data-inputs #input-data-mm,
+    .form-section form .data-inputs #input-data-yy {
+        width: 63px;
+    }
+}
+
+.form-section form .data-inputs #input-data-yy,
+.form-section form .data-inputs #input-cvc {
+    margin-left: 10px;
+}
+
+.form-section form .data-inputs #input-cvc {
+    width: 185px;
+}
+
+@media (max-width: 767px) {
+    .form-section form .data-inputs #input-cvc {
+        width: 144px;
+
+    }
+}
+
+.form-section form input[type="submit"] {
+    width: 350px;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    color: var(--White);
+    cursor: pointer;
+    background-color: var(--Very-dark-violet);
+    transition: .3s;
+    margin: 20px 0 20px 0;
+}
+
+@media (max-width: 767px) {
+    .form-section form input[type="submit"] {
+        width: 300px;
+        padding: 10px 15px;
+    }
+}
+
+.form-section form input[type="submit"]:hover {
+    background-color: #2E2A5A;
+}
+
+input:focus::placeholder {
+    opacity: 0;
+}
+
+.message {
+    color: var(--Red-input-errors);
+    font-size: 11px;
+    position: relative;
+}
+
+.span-message-cvc,
+.span-message-yy,
+.span-message-mm,
+.span-message-name {
+    display: block;
+    /* font-size: 10px; */
+    font-size: 15px;
+    color: var(--Red-input-errors);
+    margin-top: 3px;
+}
+
+.span-message-yy {
+    margin-left: -68px;
+}
+
+.meassage-spans {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.span-message-cvc {
+    margin-right: 80px;
+}
+
+/* End Form Section */
+
+/* Start  Added */
+.added {
+    margin: 200px auto;
+    text-align: center;
+    display: none;
+}
+
+.added .icon {
+    background: var(--active-input-border-and-backround);
+    color: var(--White);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin: auto auto 50px;
+    position: relative;
+}
+
+@media (min-width:767px) {
+    .added .icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.added .icon i {
+    margin: 17px;
+    font-size: 25px;
+}
+
+@media (min-width:767px) {
+    .added .icon i {
+        margin: 22px;
+    }
+}
+
+.added .thank-you {
+    margin-bottom: 15px;
+}
+
+@media (min-width:767px) {
+    .added .thank-you {
+        font-size: 30px;
+    }
+}
+
+.added .added-card {
+    font-size: 15px;
+    color: var(--Dark-grayish-violet);
+}
+
+.added .continue {
+    width: 300px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    color: var(--White);
+    cursor: pointer;
+    background-color: var(--Very-dark-violet);
+    transition: .3s;
+    margin-top: 40px;
+}
+
+@media (min-width: 767px) {
+    .added .continue {
+        padding: 15px 15px;
+    }
+}
+
+.added .continue:hover {
+    background-color: #2E2A5A;
+}
+
+/* End  Added */
