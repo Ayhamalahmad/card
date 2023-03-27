@@ -141,6 +141,13 @@ input:focus {
 @media (max-width: 991px) {
     .card-section .card-back {
         order: -1;
+        transform: translate( 80px);
+    }
+}
+
+@media (max-width: 767px) {
+    .card-section .card-back {
+        transform: translate( 30px);
     }
 }
 
@@ -222,11 +229,6 @@ input:focus {
     text-transform: uppercase;
 }
 
-@media (max-width: 767px) {
-    .form-section form label {
-        margin: 5px 0 10px 0;
-    }
-}
 
 .form-section form input::placeholder {
     color: var(--Dark-grayish-violet);
@@ -240,12 +242,6 @@ input:focus {
     width: 350px;
 }
 
-@media (max-width: 767px) {
-    .form-section form input:not([type="submit"]) {
-        padding: 10px;
-        width: 300px;
-    }
-}
 
 .input-number1.fail {
     outline: 1px solid var(--Red-input-errors);
@@ -265,11 +261,7 @@ input:focus {
     text-transform: uppercase;
 }
 
-@media (max-width: 767px) {
-    .form-section form .data-inputs .data-labels {
-        margin-top: 15px;
-    }
-}
+
 
 .form-section form .data-inputs .data-labels .cvc {
     margin-left: 15px;
@@ -302,13 +294,7 @@ input:focus {
 
 }
 
-@media (max-width: 767px) {
 
-    .form-section form .data-inputs #input-data-mm,
-    .form-section form .data-inputs #input-data-yy {
-        width: 63px;
-    }
-}
 
 .form-section form .data-inputs #input-data-yy,
 .form-section form .data-inputs #input-cvc {
@@ -319,12 +305,7 @@ input:focus {
     width: 185px;
 }
 
-@media (max-width: 767px) {
-    .form-section form .data-inputs #input-cvc {
-        width: 144px;
 
-    }
-}
 
 .form-section form input[type="submit"] {
     width: 350px;
@@ -338,12 +319,7 @@ input:focus {
     margin: 20px 0 0;
 }
 
-@media (max-width: 767px) {
-    .form-section form input[type="submit"] {
-        width: 300px;
-        padding: 10px 15px;
-    }
-}
+
 
 .form-section form input[type="submit"]:hover {
     background-color: #2E2A5A;
@@ -364,7 +340,6 @@ input:focus::placeholder {
 .span-message-mm,
 .span-message-name {
     display: block;
-    /* font-size: 10px; */
     font-size: 15px;
     color: var(--Red-input-errors);
     margin-top: 3px;
@@ -388,7 +363,7 @@ input:focus::placeholder {
 
 /* Start  Added */
 .added {
-    margin: 200px auto;
+    margin: 160px auto;
     text-align: center;
     display: none;
 }
@@ -399,46 +374,32 @@ input:focus::placeholder {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    margin: auto auto 50px;
+    margin: auto auto 30px;
     position: relative;
 }
 
-@media (min-width:767px) {
-    .added .icon {
-        width: 70px;
-        height: 70px;
-    }
-}
 
 .added .icon i {
     margin: 17px;
     font-size: 25px;
 }
 
-@media (min-width:767px) {
-    .added .icon i {
-        margin: 22px;
-    }
-}
 
 .added .thank-you {
     margin-bottom: 15px;
+    font-size: 30px;
+
 }
 
-@media (min-width:767px) {
-    .added .thank-you {
-        font-size: 30px;
-    }
-}
+
 
 .added .added-card {
-    font-size: 15px;
     color: var(--Dark-grayish-violet);
 }
 
 .added .continue {
-    width: 300px;
-    padding: 10px 15px;
+    width: 350px;
+    padding: 15px 15px;
     border: none;
     border-radius: 6px;
     color: var(--White);
@@ -448,11 +409,7 @@ input:focus::placeholder {
     margin-top: 40px;
 }
 
-@media (min-width: 767px) {
-    .added .continue {
-        padding: 15px 15px;
-    }
-}
+
 
 .added .continue:hover {
     background-color: #2E2A5A;
