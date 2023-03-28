@@ -319,7 +319,11 @@ input:focus {
     margin: 20px 0 0;
 }
 
-
+@media (max-width: 767px) {
+    .form-section form input[type="submit"]{
+        margin: 20px 0 20px;
+    }
+}
 
 .form-section form input[type="submit"]:hover {
     background-color: #2E2A5A;
